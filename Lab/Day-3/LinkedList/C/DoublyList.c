@@ -1,5 +1,5 @@
 /**
- * To Compile : 
+ * To Compile :
  * gcc DoublyList.c helper.c -o dll
  * ./dll
  * */
@@ -13,10 +13,10 @@
 
 /**
  * INSERTION FUNCTIONS:
- * insert_at_beginning 
+ * insert_at_beginning
  * insert_at_end
  * insert_at_specific
-*/ 
+*/
 void insert_at_beginning(DoublyList* list,int val){
     DoublyNode* new_node = create_doubly_node(val);
     if(!new_node) return;
@@ -131,7 +131,7 @@ void delete_from_specific(DoublyList* list,int pos){
     // Optional to show
     if(temp->next == NULL){
         printf("Position %d out of bounds.\n\n", pos);
-        return; 
+        return;
     }
 
     // reached end
@@ -148,7 +148,7 @@ void delete_from_specific(DoublyList* list,int pos){
     }
 
     temp->next = node_after;
-    node_after->prev = temp; 
+    node_after->prev = temp;
 
     node_to_delete->prev = node_to_delete->next = NULL;
 

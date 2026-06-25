@@ -2,9 +2,9 @@
 #include <iostream>
 
 #include "helper.h"
-#include "selection_sort.h"
+// #include "selection_sort.h"
 // #include "bubble_sort.h"
-// #include "insertion_sort.h"
+#include "insertion_sort.h"
 
 int arr[MAX];
 
@@ -24,7 +24,8 @@ int main() {
   std::cout << "Sorting...\n";
   auto start = std::chrono::steady_clock::now();
 
-  selection_sort(arr, n);
+  // selection_sort(arr, n);
+  insertion_sort(arr,n);
 
   auto end = std::chrono::steady_clock::now();
 

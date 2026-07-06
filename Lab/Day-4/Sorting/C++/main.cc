@@ -34,6 +34,5 @@ int main() {
   auto time_taken =
       std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
   std::cout << "Time Taken is " << time_taken.count() * 1e-9 << " s\n";
-
   return 0;
 }

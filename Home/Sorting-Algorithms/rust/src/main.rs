@@ -1,6 +1,7 @@
 // mod bubble_sort;
 // mod selection_sort;
-mod insertion;
+// mod insertion;
+mod shell;
 use rand::Rng;
 use std::time::Instant;
 
@@ -12,7 +13,6 @@ use std::time::Instant;
 
 fn main() {
     // Initialize Array and size input
-    let mut arr = Vec::new();
     let mut input = String::new();
 
     // Ask user to input array size
@@ -24,16 +24,13 @@ fn main() {
 
     let n: usize = input.trim().parse().expect("Error parsing !");
 
-    arr.resize(n, 0);
-
-    // Put random values in array
-    for i in 0..n {
-        arr[i] = rand::thread_rng().gen_range(1..=100_000);
-    }
+    let mut arr: Vec<i32> = (0..n)
+        .map(|_| rand::thread_rng().gen_range(0..100_000))
+        .collect();
 
     // Measure time
     let start = Instant::now();
-    insertion::sort(&mut arr);
+    shell::sort(&mut arr);
     let duration = start.elapsed();
 
     println!("Time taken: {} seconds", duration.as_secs_f64());
